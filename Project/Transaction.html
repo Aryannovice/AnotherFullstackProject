@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proceed with Transaction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .message {
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 3px;
+      color: #fff;
+    }
+
+    .success {
+      background-color: #4CAF50;
+    }
+
+    .error {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Proceed with Transaction</h2>
+    <form id="transactionForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Proceed">
+      </div>
+    </form>
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    // Get the form element
+    var form = document.getElementById("transactionForm");
+
+    // Add event listener for form submission
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Get the form inputs
+      var nameInput = document.getElementById("name");
+      var emailInput = document.getElementById("email");
+      var amountInput = document.getElementById("amount");
+
+      // Get the message element
+      var messageElement = document.getElementById("message");
+
+      // Perform validation
+      if (nameInput.value === "" || emailInput.value === "" || amountInput.value === "") {
+        showMessage("error", "Please fill in all fields.");
+      } else {
+        // Proceed with the transaction
+        showMessage("success", "Transaction completed successfully!");
+
+        // Reset the form
+        form.reset();
+      }
+    });
+
+    // Function to display a message
+    function showMessage(type, message) {
+      var messageElement = document.getElementById("message");
+      messageElement.innerHTML = message;
+      messageElement.className = "message " + type;
+    }
+  </script>
+</body>
+</html>
