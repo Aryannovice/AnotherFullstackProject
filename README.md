@@ -10,5 +10,11 @@ it looks something like this
 Ofc it supports screen adjustments
 ![image](https://github.com/user-attachments/assets/fc1d203e-fbf1-43cb-b490-fd1ac00d1ac1)
 
-Its open for contributions , made it before any vibe coding era , does look a little rusty even with file structures 
+Its open for contributions , made it before any vibe coding era , does look a little rusty even with file structures ..
+
+
+![image](https://github.com/user-attachments/assets/fc2618a5-bd33-4b09-94ea-8b57e9af7f13)
+
+
+
 
